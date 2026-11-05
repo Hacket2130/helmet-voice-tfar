@@ -1,0 +1,92 @@
+PASS four speaker/listener helmet combinations
+PASS strict versioned protocol field
+PASS ACE off keeps decoder without outgoing scramble
+PASS DTR2 preserves Death Trooper decoder and ACE scrambler states
+PASS ordinary helmet speaker state never grants Death Trooper decoding or scrambling
+PASS ordinary helmet state rejects unknown and malformed fields
+PASS mono callback conversion duplicates each sample without reading a second channel
+PASS mono downmix avoids overflow and preserves the sample-count boundary
+PASS wider callback layouts preserve the first stereo pair and clear remaining channels
+PASS silence generates no noise
+PASS amp retains speech waveform texture rather than envelope-only noise
+PASS no dry speech leaks during scrambling-buffer warmup
+PASS speech produces distorted amplifier output
+PASS state continuous across variable packet boundaries
+Measured pitch: default 566.245 Hz, zero semitones 800.088 Hz
+PASS default minus-six-semitone pitch converts 800 Hz to about 565.7 Hz
+PASS zero-semitone setting preserves 800 Hz pitch after scrambling
+PASS out-of-range pitch values clamp to supported octave range
+PASS invalid pitch value falls back to minus-six-semitone default
+PASS mono replacement preserves equal channels before TFAR spatialization
+PASS full-scale input bounded below clipping
+PASS invalid buffers and channel counts untouched
+PASS state reset leaves no residual voice or noise
+PASS reverb prolongs distorted amp after source stops
+PASS reverb feedback decays rather than building up
+PASS higher high-pass cutoff reduces low-frequency output energy
+PASS metal cabinet emphasizes both resonant bands over the region between them
+Cabinet RMS gains: 1250 Hz 1.32228, 1800 Hz 0.834751, 2650 Hz 1.16627
+PASS zero metallic amount bypasses cabinet coloration
+PASS speech-excited metal ring decays by 20 ms without self-oscillation
+PASS cabinet reset removes all resonant tail
+PASS non-finite drive and metallic settings use finite defaults
+PASS drive and metallic settings clamp to supported limits
+PASS maximum drive and metal resonance stay within output limiter
+PASS screech emphasizes the upper voice band rather than uniformly raising volume
+Screech RMS gains: 400 Hz 0.929684, 4200 Hz 2.23446, 10000 Hz 0.895376
+PASS zero screech amount is a sample-exact bypass
+PASS upper-band screech decays by 20 ms without a sustained tone
+PASS screech reset removes the resonant and low-pass tail
+PASS non-finite screech settings use the finite default
+PASS screech settings clamp to the supported range
+PASS maximum screech, drive, metal and reverb stay within the output limiter
+PASS static is exactly zero below the speech gate or at zero amount
+PASS open speech gate produces bounded static with negligible DC
+Static RMS at default amount and open gate: 0.052472
+PASS static reset followed by silence leaves no hiss
+PASS per-speaker static streams are independent and deterministic
+Static-off late-tail difference: 0 PCM units
+PASS static adds speech texture without a noise bed in long ungated reverb tails
+Static-toggle settled difference: 0 PCM units
+PASS turning static off preserves the grain sequence and underlying voice
+PASS non-finite static settings use the finite default
+PASS static settings clamp to the supported range
+PASS maximum static and amplifier settings stay within the output limiter
+PASS 8-bit and 12-bit modes quantize at their stated resolution
+PASS digital crunch holds each quantized sample for four frames
+PASS 16-bit mode bypasses quantization and sample hold exactly
+PASS fourth-order radio high-pass sharply rejects bass below 150 Hz
+Radio high-pass gains: 75 Hz 0.0623723, 150 Hz 0.707107, 300 Hz 0.998054
+PASS radio high-pass reset removes its entire tail
+PASS mild 90 Hz ring modulation adds sidebands while retaining the voice carrier
+PASS zero ring modulation leaves the speech samples unchanged
+Ring sideband amplitudes: 910 Hz 0.0180001, 1090 Hz 0.0180001
+PASS hard squelch closes on exactly the 48th sub-threshold frame
+PASS one-ms squelch hold bridges ordinary voiced zero crossings
+PASS gate reset and zero-hold mode close immediately on silence
+PASS final squelch cuts all static and maximum reverb to exact zero in pauses
+PASS speech reopens without another 200 ms buffer warmup
+PASS reopened speech contains no stored tail from the previous talk burst
+PASS maximum digital-radio effects remain within the output limit
+PASS invalid bit depth, ring and squelch settings use finite R6 defaults
+PASS digital-radio controls clamp to supported ranges
+PASS bit-depth settings select only the supported 8, 12 and 16-bit modes
+PASS dark voice low-pass retains the low voice band and attenuates upper fizz
+Dark low-pass gains: 800 Hz 0.998157, 3200 Hz 0.707107, 6400 Hz 0.222221
+PASS dark low-pass reset leaves no stored ringing
+PASS default effect selects the darker R7 voice and 220 ms metallic tail
+PASS closed speech gate retains a decaying voice-only metallic tail
+PASS bounded metallic tail ends in exact silence after 220 ms
+PASS tail duration caps even a long reverb decay at its configured deadline
+PASS static changes speech texture but cannot enter any sample of the closed-gate wet tail
+PASS zero tail duration retains the immediate all-effects hard cut
+PASS zero reverb mix leaves no tail or residual static after speech
+PASS speech reopening during a tail adds new voice immediately without buffer warmup
+PASS reopened voice overlays the existing metallic resonance before the tail expires
+PASS setting an active tail to zero cuts it immediately and cannot revive it on reopening
+PASS a later speech burst cannot revive an expired wet tail
+PASS speech, tail, and reopening remain identical across variable packet boundaries
+PASS non-finite low-pass and tail settings use the finite R7 defaults
+PASS darkness and metallic-tail controls clamp to supported limits
+PASS full reset during an active tail clears voice, reverb, static and speech buffers
+82 checks passed

@@ -1,0 +1,3 @@
+
+  helmet_voice_tests.cpp
+  helmet_voice_tests.vcxproj -> C:\Users\logan\Documents\Codex\2026-11-04\us\work\standalone-dsp\helmet_voice_tests.exe

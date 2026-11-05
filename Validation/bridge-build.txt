@@ -1,0 +1,4 @@
+
+  bridge.cpp
+     Creating library C:\Users\logan\Documents\Codex\2026-11-04\us\standalone\native\..\..\work\standalone-native\tfv_helmet_voice_x64.lib and object C:\Users\logan\Documents\Codex\2026-11-04\us\standalone\native\..\..\work\standalone-native\tfv_helmet_voice_x64.exp
+  bridge.vcxproj -> C:\Users\logan\Documents\Codex\2026-11-04\us\work\standalone-native\tfv_helmet_voice_x64.dll

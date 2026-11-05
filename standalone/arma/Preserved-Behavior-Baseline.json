@@ -1,0 +1,40 @@
+{
+  "baseline": "Accepted R11 Arma helmet behavior, captured from src/addons/dtr_core on 2026-11-05",
+  "hashAlgorithm": "SHA256 of UTF-8 text with CRLF and CR normalized to LF; no other whitespace normalization",
+  "functions": {
+    "functions/fnc_getState.sqf": "89dbf03738872d9271871e4ae06955a19f41aa2ca35c4382ed767ffb7e408bdc",
+    "functions/fnc_initAce.sqf": "e81141116c54e65be54b3dd362ba85f06b04849c1f638057349ecd808f0c4b4b",
+    "functions/fnc_isHelmet.sqf": "360b31012183e74caaf69f7d7509e0c9b2562a3cd5550b4ecb0764928919bee0",
+    "functions/fnc_isSpeakerHelmet.sqf": "d9d29057a4d0293690eeab8e6ab975eb241339e0b0b8e60966a46fa44821b9d3",
+    "functions/fnc_rebuildHelmetClasses.sqf": "8679d44a74a2af9be6f827238c8fc6e996021ad2c25410cb9a70e2f14d4bc75f",
+    "functions/fnc_setHelmetVoice.sqf": "eebbf6d84a39397f995892843b82ff28ada0a9c930a43d77dd9f8d1be27ff576",
+    "functions/fnc_setScrambler.sqf": "07deaf69f0d329543b69dcfdbcaf04dab064acb6a5481e9511bbb2336a465064"
+  },
+  "cbaDefinitionBodySha256": "2004c4ba1d1c76d5c05388a7371049b6b68c0760e4a7aa2eb7f927bf4a4c93de",
+  "llteSettingsClassSha256": "51a1232efeaa1218332d689ea91578e6f76837b9a7d29727da18a14e74585a4b",
+  "protocolSettings": [
+    "DTR_reverbMix=0.25",
+    "DTR_reverbDecay=0.35",
+    "DTR_highPass=150",
+    "DTR_pitch=-6",
+    "DTR_ampDrive=32",
+    "DTR_metallic=0.75",
+    "DTR_screech=0.25",
+    "DTR_staticAmount=0.65",
+    "DTR_bitDepth=8",
+    "DTR_ringAmount=0.12",
+    "DTR_hardGate=true",
+    "DTR_gateThreshold=-48",
+    "DTR_gateHold=1",
+    "DTR_lowPass=3200",
+    "DTR_tailLength=0.22",
+    "DTR_helmetHighPass=623",
+    "DTR_helmetLowPass=3100",
+    "DTR_helmetDrive=2.4",
+    "DTR_helmetMix=1.0",
+    "DTR_helmetResonanceFrequency=2000",
+    "DTR_helmetResonanceGain=3",
+    "DTR_helmetClarityFrequency=2500",
+    "DTR_helmetClarityGain=2"
+  ]
+}

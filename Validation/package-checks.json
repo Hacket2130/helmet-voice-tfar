@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-11-05T18:44:45.3486309Z",
+  "architecture": "Standalone addon; no TFAR replacements",
+  "bridgeChecks": 29,
+  "companionChecks": 96,
+  "retainedDspChecks": 115,
+  "pboSourceEntries": 13,
+  "sourceFiles": 50,
+  "stockTfarFilesIncluded": false,
+  "privateKeysOrRecordingsIncluded": false,
+  "liveMultiplayerAccepted": false,
+  "guiAccepted": false
+}

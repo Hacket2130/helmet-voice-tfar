@@ -1,0 +1,3 @@
+
+  death_trooper_tests.cpp
+  death_trooper_tests.vcxproj -> C:\Users\logan\Documents\Codex\2026-11-04\us\work\standalone-dsp\death_trooper_tests.exe

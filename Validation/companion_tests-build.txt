@@ -1,0 +1,2 @@
+
+  companion_tests.vcxproj -> C:\Users\logan\Documents\Codex\2026-11-04\us\work\standalone-native\companion_tests.exe

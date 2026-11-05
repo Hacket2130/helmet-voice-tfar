@@ -1,37 +1,44 @@
 # Task force Vanguard TFAR addon
 
-> **R11 packaging correction:** the published R11 build is a TFAR replacement fork, not an addon that runs alongside stock TFAR. It does not meet the intended addon installation model. Do not load R11 together with stock TFAR. A separate Arma addon and TeamSpeak companion are being built so both original TFAR components stay enabled. R11 is retained as a historical build; do not use its installer for the standalone-addon setup.
+**R12 is a standalone addon. Keep the official TFAR Beta Arma mod and TeamSpeak plugin enabled.** R11 was incorrectly packaged as a replacement and is retained only as a labelled legacy prerelease.
 
-An unofficial Windows x64 TFAR Beta fork for Arma 3 and TeamSpeak 3, with Long Live the Empire helmet recognition, CBA settings and optional ACE self-interaction controls.
+[Download Windows setup R12](https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/Task-force-Vanguard-TFAR-addon-Setup-R12.exe) · [Release and manual downloads](https://github.com/Hacket2130/helmet-voice-tfar/releases/tag/r12)
 
-**[Download the installer](https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r11/Task-force-Vanguard-TFAR-addon-Setup-R11.exe)** · **[Releases and manual downloads](https://github.com/Hacket2130/helmet-voice-tfar/releases)**
+The setup includes offline installation and optional GitHub update checks. Checks run while the setup app is open; updates install when selected. No background service, application restart or automatic R11 migration is added.
 
-The installer includes the R11 Arma mod and TeamSpeak package. It can check GitHub Releases when opened, download a newer version after you choose it, verify its SHA256 and keep previous releases. First installation works offline.
+Current implementation and build instructions are in `standalone/`. Other source folders are retained as historical R11 code, not R12 runtime dependencies. The release contains no stock TFAR binaries, private signing keys or user audio recordings.
 
-## Setup
+## Install
 
-1. Run `Task-force-Vanguard-TFAR-addon-Setup-R11.exe` and choose **Install bundled R11**.
-2. Choose **Install TeamSpeak plugin**. This opens TeamSpeak's normal installer. Back up the existing TFAR plugin, complete installation and restart TeamSpeak when convenient. Enable only **Task Force Arrowhead Radio - Helmet Voice R11**, the unchanged plugin's display name.
-3. Choose **Copy mod path**, then add it with Arma Launcher **Mods > Local mod**. Disable the original TFAR Beta for that preset. Enable CBA_A3 and Long Live the Empire; ACE adds the wearer toggles.
-4. Keep clients and servers on matching mod/plugin versions. After updating, install the new TeamSpeak package and change Arma's Local mod entry to the new version folder.
+1. Keep the official TFAR Beta Arma mod and official TFAR TeamSpeak plugin installed and enabled.
+2. Add `@TFV_TFAR_Addon` as an additional Arma Launcher Local mod. Enable CBA_A3 and your helmet mod (Long Live the Empire has built-in mappings). Enable ACE for self-interaction toggles.
+3. Install `teamspeak/task_force_vanguard.ts3_plugin`. TeamSpeak should show **Task force Vanguard TFAR addon** alongside the official TFAR plugin. Enable both. Restart TeamSpeak yourself if its package installer requests it.
+4. All participating clients need the addon and companion. The server needs the addon/CBA to distribute the mission token and the public signing key from `keys`. Server/mission CBA overrides remain supported.
 
-Reopen `Task-force-Vanguard-TFAR-addon-Setup.exe` in the install folder to check updates. Checks on opening can be disabled. The app never restarts Arma or TeamSpeak and has no background service or scheduled task. Standalone `.ts3_plugin` installation is also available from Releases.
+## If you installed R11
 
-## Sound and controls
+R11 was incorrectly packaged as a TFAR replacement. Disable its `@TFAR_DTR` local mod. Enable the official TFAR Beta Workshop mod and reinstall its official TeamSpeak package to restore the original TFAR DLL. Then add R12 as described above. Keep old release files for rollback. The R12 installer does not remove files, change launcher presets, reinstall TFAR or restart applications automatically.
 
-- Standard sealed helmets use a 623–3100 Hz band, a 2 kHz resonance, mild amplifier distortion and a +2 dB clarity boost at 2500 Hz. No generated clicks or static.
-- Death Trooper speech is scrambled, deeper and metallic for other listeners, while Death Trooper helmet wearers decode it. Ordinary sealed helmets do not gain decoding.
-- CBA offers 32 policy/audio controls; ACE provides independent helmet-speaker and scrambler toggles. Server and mission overrides are supported.
+R12 uses an independent install root and schema-2 update feed. The old R11 setup cannot migrate this architecture automatically; use the R12 setup. R11 is retained as a clearly labelled legacy prerelease outside the latest update channel.
 
-R11's standard-helmet sample was approved on 2026-11-05. The mod passed 115 native DSP/protocol checks and 15 package checks. **Live multiplayer, CBA/ACE operation, performance and Death Trooper intelligibility still need in-game acceptance.** This is a development test release.
+## How it works
 
-## Developers
+The Arma addon uses TFAR's public current-unit and server-UID functions, sends only its local unit's helmet/toggle/settings through its own `tfv_helmet_voice_x64.dll`, and leaves TFAR's messages untouched. The separate TeamSpeak companion announces its own helmet state using TeamSpeak plugin commands. Receivers identify each sender from TeamSpeak's callback identity, require the same mission/server context and fresh heartbeats, and process that sender's decoded voice before stock TFAR applies positional/radio processing.
 
-- [Installer architecture, build and release instructions](installer/README.md)
-- [Installer validation](installer/VALIDATION.md)
-- [Mod source build instructions](mod-source/BUILD.md)
-- [Development plan](PLAN.md) and [delivery log](DEVELOPMENT_LOG.md)
+The standard speaker profile retains the approved R11 filters and slight distortion, without generated clicks or static. Death Trooper helmets decode each other; other supported listeners hear the retained deeper garble and metallic tail. CBA controls and ACE toggles retain their setting names so saved mission settings can be reused.
 
-The immutable mod ZIP includes its upstream patch, source, tests, licenses and historical validation. The setup executable is not Authenticode signed. Update trust is HTTPS plus this GitHub repository; SHA256 checks verify asset integrity, not an independent publisher identity. The inherited stock TFAR notification is separate from Task force Vanguard TFAR addon's updater.
+## Limits and validation
 
-Based on [Task Force Arrowhead Radio](https://github.com/michail-nikolaev/task-force-arma-3-radio), copyright Michail Nikolaev and contributors, under the [Arma Public License Share Alike](https://www.bistudio.com/community/licenses/arma-public-license-share-alike). Upstream commit: `fce977fa388bb527a989af1e162ade648c8d9d75`. This project is not affiliated with Arma 3, TeamSpeak, TFAR, CBA, ACE or Long Live the Empire.
+This is a development test build. Compilation, native/unit/IPC/package/installer checks do not establish live multiplayer acceptance. Actual CBA/ACE operation, audio timing with both plugins, performance and Death Trooper intelligibility need an in-game session.
+
+State announcements use the current TeamSpeak channel, matching standard common-channel TFAR operation. Custom cross-channel whisper arrangements are not validated. Each listener needs this companion; the effect is not secure encryption. Missing, stale, disconnected or mismatched context bypasses the effect, and no captured microphone data is changed or uploaded by the addon. TFAR's own local microphone-to-radio-speaker monitor path stays under TFAR's control.
+
+Stock TFAR logs foreign plugin commands, so Vanguard's two-second state heartbeat adds harmless unknown-command entries to TFAR's TeamSpeak log. It does not change TFAR's routing or settings.
+
+The Windows setup and native DLLs are not Authenticode signed. Public Arma PBO signatures are included; server signature acceptance and BattlEye loading remain live-environment checks. Do not disable game or OS protections to load an unaccepted build.
+
+## Source
+
+`Source/standalone` contains the independent addon, extension, companion, SDK headers, installer and tests. The copied DSP headers are byte-identical to the approved R11 implementations. The original R11 fork remains historical and is not a runtime dependency. See `PLAN.md`, `DEVELOPMENT_LOG.md` and `Validation/` for exact evidence.
+
+Based on TFAR/helmet DSP work under the Arma Public License Share Alike; upstream TFAR attribution is preserved in LICENSE.md. TeamSpeak SDK headers are from the official API26 repository and retain their notices. This project is unofficial and unaffiliated with TFAR, TeamSpeak, Bohemia Interactive, CBA, ACE or Long Live the Empire.

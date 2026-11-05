@@ -1,0 +1,13 @@
+# Standalone installer development log
+
+## 2026-11-05
+
+- Copied the historical installer into standalone/installer. No original source or released archive was changed.
+- Adopted schema 2, product task-force-vanguard-tfar-addon, R12, plugin version 0.12.0 and @TFV_TFAR_Addon. Settings/install root uses TaskForceVanguardTFAR separately from the old HelmetVoiceTFAR directory.
+- Required own tfv_core.pbo, x64 bridge and separately named TeamSpeak companion. Validation rejects other mod roots, foreign PBO/DLL/plugin files, and nested TeamSpeak package files outside package.ini plus plugins/task_force_vanguard_win64.dll.
+- Changed UI and instructions to keep official TFAR enabled. R11 migration is explicit and manual: disable @TFAR_DTR and restore the official TeamSpeak plugin. No automatic deletion, replacement or migration is implemented.
+- Build requires a reviewed expected SHA256, embeds that exact package, compiles with warnings as errors, and runs the full backend suite including actual bundled install before copying deliverables to a new output directory. Existing outputs are refused.
+- C# 5 GUI/test target compilation and PowerShell parser check pass. Runtime tests and actual native package verification remain pending until root produces R12. GUI and in-game operation are not claimed.
+- Added PublishedReleaseCheck.cs as an explicit post-publication check. It loads the built setup without launching its GUI, requires the R12 schema/product/version, compares the public feed against the embedded manifest, downloads through the production installer backend into a unique work/net12 directory, verifies readback, and independently rejects foreign PBOs/extensions/TeamSpeak DLLs. The C# 5 check compiled with warnings as errors; no network check has run before publication.
+- Built the actual reviewed R12 package with SHA256 FD0B3A1BAF10E56A115874B3B21737F7D0615CF32018BD6DDE514DBAA51A12C5 (563404 bytes). Both embedded-resource C# targets compiled with warnings as errors. All 137 installer assertions passed, including actual package install/readback/idempotency and nested companion collision validation. Test artifacts: work/iv-fb786f07/run-ef92da87; build logs: work/r12i-5f11fdb8/tests.txt.
+- Release assets were written once to outputs/Task-force-Vanguard-TFAR-addon-R12-Release. Setup SHA256 E8773E88C91C8362B6E2AFD50275B7994D4728DBB27F4C0995295486FCC41605 (624640 bytes); separate companion package SHA256 5D1ED6E9A8A07EBA92D067B48EFEE10DBB140EE8E66C25FDDB34F2290372C5B3 (345208 bytes). The original sealed ZIP was unchanged. Publication/network check and live game/audio acceptance remain separate; no GUI or live application was launched.

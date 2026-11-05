@@ -1,0 +1,2 @@
+
+  plugin.vcxproj -> C:\Users\logan\Documents\Codex\2026-11-04\us\work\standalone-native\task_force_vanguard_win64.dll

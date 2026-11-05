@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-11-05T18:44:24.7376054Z",
+  "scope": "Arma source preservation and standalone transport boundary; config compilation only",
+  "baselineManifestSha256": "8A9F95AD2CB581BB2EEDE59F91ACE1C29FF647B0E8C9E1EB0E7DED81DFCCA091",
+  "checks": [
+    {
+      "check": "Preserved fnc_getState",
+      "passed": true
+    },
+    {
+      "check": "Preserved fnc_initAce",
+      "passed": true
+    },
+    {
+      "check": "Preserved fnc_isHelmet",
+      "passed": true
+    },
+    {
+      "check": "Preserved fnc_isSpeakerHelmet",
+      "passed": true
+    },
+    {
+      "check": "Preserved fnc_rebuildHelmetClasses",
+      "passed": true
+    },
+    {
+      "check": "Preserved fnc_setHelmetVoice",
+      "passed": true
+    },
+    {
+      "check": "Preserved fnc_setScrambler",
+      "passed": true
+    },
+    {
+      "check": "Preserved all existing CBA definitions and defaults",
+      "passed": true
+    },
+    {
+      "check": "Exactly 32 CBA settings",
+      "passed": true
+    },
+    {
+      "check": "Preserved exact LLTE helmet roots",
+      "passed": true
+    },
+    {
+      "check": "Own CfgPatches identifier",
+      "passed": true
+    },
+    {
+      "check": "Original TFAR remains a dependency",
+      "passed": true
+    },
+    {
+      "check": "Own PBO prefix",
+      "passed": true
+    },
+    {
+      "check": "Own function path",
+      "passed": true
+    },
+    {
+      "check": "Protocol has exactly 23 numeric settings",
+      "passed": true
+    },
+    {
+      "check": "Protocol preserves setting order and defaults",
+      "passed": true
+    },
+    {
+      "check": "No assignments to TFAR functions or variables",
+      "passed": true
+    },
+    {
+      "check": "No stock TFAR custom settings transport",
+      "passed": true
+    },
+    {
+      "check": "Only two local companion extension call sites",
+      "passed": true
+    },
+    {
+      "check": "Sender excludes dedicated servers and headless clients",
+      "passed": true
+    },
+    {
+      "check": "Initialization excludes dedicated servers and headless clients",
+      "passed": true
+    },
+    {
+      "check": "Diagnostic scopes extension call to interactive clients",
+      "passed": true
+    },
+    {
+      "check": "Heartbeat is 0.5 seconds",
+      "passed": true
+    },
+    {
+      "check": "Mission token published by server",
+      "passed": true
+    },
+    {
+      "check": "State uses separate extension and protocol",
+      "passed": true
+    },
+    {
+      "check": "State success requires exact companion acceptance",
+      "passed": true
+    },
+    {
+      "check": "Legacy replacement plugin rejected",
+      "passed": true
+    },
+    {
+      "check": "Legacy replacement core rejected",
+      "passed": true
+    },
+    {
+      "check": "Arma CfgConvert accepted config.cpp",
+      "passed": true
+    }
+  ],
+  "runtimeSqfTested": false,
+  "multiplayerAudioTested": false,
+  "standaloneOnlyCopy": true,
+  "legacySourceFilesPresent": false
+}
