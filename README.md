@@ -1,5 +1,7 @@
 # Task force Vanguard TFAR addon
 
+> **R11 packaging correction:** the published R11 build is a TFAR replacement fork, not an addon that runs alongside stock TFAR. It does not meet the intended addon installation model. Do not load R11 together with stock TFAR. A separate Arma addon and TeamSpeak companion are being built so both original TFAR components stay enabled. R11 is retained as a historical build; do not use its installer for the standalone-addon setup.
+
 An unofficial Windows x64 TFAR Beta fork for Arma 3 and TeamSpeak 3, with Long Live the Empire helmet recognition, CBA settings and optional ACE self-interaction controls.
 
 **[Download the installer](https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r11/Task-force-Vanguard-TFAR-addon-Setup-R11.exe)** · **[Releases and manual downloads](https://github.com/Hacket2130/helmet-voice-tfar/releases)**
