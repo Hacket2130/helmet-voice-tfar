@@ -1,0 +1,9 @@
+outputs/
+work/
+*.biprivatekey
+*.exe
+*.dll
+*.pbo
+*.ts3_plugin
+*.wav
+*.mp3

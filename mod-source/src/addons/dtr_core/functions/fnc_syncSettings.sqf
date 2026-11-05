@@ -1,0 +1,25 @@
+// Only send custom keys after the DTR capability check; stock TFAR rejects them.
+if (!hasInterface || {!(missionNamespace getVariable ["DTR_pluginReady", false])}) exitWith {};
+["deathTrooperReverbMix", missionNamespace getVariable ["DTR_reverbMix", 0.25]] call TFAR_fnc_setPluginSetting;
+["deathTrooperReverbDecay", missionNamespace getVariable ["DTR_reverbDecay", 0.35]] call TFAR_fnc_setPluginSetting;
+["deathTrooperHighPass", missionNamespace getVariable ["DTR_highPass", 150]] call TFAR_fnc_setPluginSetting;
+["deathTrooperPitch", missionNamespace getVariable ["DTR_pitch", -6]] call TFAR_fnc_setPluginSetting;
+["deathTrooperAmpDrive", missionNamespace getVariable ["DTR_ampDrive", 32]] call TFAR_fnc_setPluginSetting;
+["deathTrooperMetallic", missionNamespace getVariable ["DTR_metallic", 0.75]] call TFAR_fnc_setPluginSetting;
+["deathTrooperScreech", missionNamespace getVariable ["DTR_screech", 0.25]] call TFAR_fnc_setPluginSetting;
+["deathTrooperStatic", missionNamespace getVariable ["DTR_staticAmount", 0.65]] call TFAR_fnc_setPluginSetting;
+["deathTrooperBitDepth", missionNamespace getVariable ["DTR_bitDepth", 8]] call TFAR_fnc_setPluginSetting;
+["deathTrooperRingAmount", missionNamespace getVariable ["DTR_ringAmount", 0.12]] call TFAR_fnc_setPluginSetting;
+["deathTrooperHardGate", missionNamespace getVariable ["DTR_hardGate", true]] call TFAR_fnc_setPluginSetting;
+["deathTrooperGateThreshold", missionNamespace getVariable ["DTR_gateThreshold", -48]] call TFAR_fnc_setPluginSetting;
+["deathTrooperGateHold", missionNamespace getVariable ["DTR_gateHold", 1]] call TFAR_fnc_setPluginSetting;
+["deathTrooperLowPass", missionNamespace getVariable ["DTR_lowPass", 3200]] call TFAR_fnc_setPluginSetting;
+["deathTrooperTailLength", missionNamespace getVariable ["DTR_tailLength", 0.22]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceHighPass", missionNamespace getVariable ["DTR_helmetHighPass", 623]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceLowPass", missionNamespace getVariable ["DTR_helmetLowPass", 3100]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceDrive", missionNamespace getVariable ["DTR_helmetDrive", 2.4]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceMix", missionNamespace getVariable ["DTR_helmetMix", 1.0]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceResonanceFrequency", missionNamespace getVariable ["DTR_helmetResonanceFrequency", 2000]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceResonanceGain", missionNamespace getVariable ["DTR_helmetResonanceGain", 3]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceClarityFrequency", missionNamespace getVariable ["DTR_helmetClarityFrequency", 2500]] call TFAR_fnc_setPluginSetting;
+["helmetVoiceClarityGain", missionNamespace getVariable ["DTR_helmetClarityGain", 2]] call TFAR_fnc_setPluginSetting;
