@@ -14,3 +14,5 @@ Known boundaries: current-channel TS state transport requires common-channel TFA
 Status at package sealing: steps 1-4 and the addon/signing portion of step 5 are implemented and pass offline checks. Step 6 installer/public verification is recorded in the release validation report after the immutable addon ZIP is sealed. Live acceptance remains open regardless of release publication.
 
 Post-seal: schema-2 installer compiled and all 137 backend assertions passed against the sealed bundle. Source and binary publication plus live update-feed/download verification are the remaining delivery steps.
+
+Delivery status: R12 source and six release assets published; public asset sizes/digests and source tag verified. Live update-feed/download/install verification was attempted but tool dispatch stalled and was cancelled without a returned result. This and the existing live gameplay/GUI acceptance gates remain open.

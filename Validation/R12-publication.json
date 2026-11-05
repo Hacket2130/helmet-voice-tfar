@@ -1,0 +1,55 @@
+{
+  "CheckedUtc": "2026-11-05T18:50:58.3343902Z",
+  "ReleaseID": 435595497,
+  "Tag": "r12",
+  "SourceCommit": "31e5847bb673ca77b4744e0edce7eb7642ab22d8",
+  "Assets": [
+    {
+      "Name": "SHA256SUMS.txt",
+      "Bytes": 523,
+      "Digest": "sha256:bbd54cf93b08b67251d97d2272690d48e624e00ec4897c5c7c421ce70de8e074",
+      "URL": "https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/SHA256SUMS.txt",
+      "Verified": true
+    },
+    {
+      "Name": "Task-force-Vanguard-TFAR-addon-R12.ts3_plugin",
+      "Bytes": 345208,
+      "Digest": "sha256:5d1ed6e9a8a07eba92d067b48efee10dbb140ee8e66c25fddb34f2290372c5b3",
+      "URL": "https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/Task-force-Vanguard-TFAR-addon-R12.ts3_plugin",
+      "Verified": true
+    },
+    {
+      "Name": "Task-force-Vanguard-TFAR-addon-R12.zip",
+      "Bytes": 563404,
+      "Digest": "sha256:fd0b3a1baf10e56a115874b3b21737f7d0615cf32018bd6dde514dbaa51a12c5",
+      "URL": "https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/Task-force-Vanguard-TFAR-addon-R12.zip",
+      "Verified": true
+    },
+    {
+      "Name": "Task-force-Vanguard-TFAR-addon-Setup-R12.exe",
+      "Bytes": 624640,
+      "Digest": "sha256:e8773e88c91c8362b6e2afd50275b7994d4728dbb27f4c0995295486fcc41605",
+      "URL": "https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/Task-force-Vanguard-TFAR-addon-Setup-R12.exe",
+      "Verified": true
+    },
+    {
+      "Name": "Task-force-Vanguard-TFAR-addon-Source-R12.zip",
+      "Bytes": 142107,
+      "Digest": "sha256:537580fe5a62be5866a7179014c48712495ef1e732dced5042b8f56899c37fda",
+      "URL": "https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/Task-force-Vanguard-TFAR-addon-Source-R12.zip",
+      "Verified": true
+    },
+    {
+      "Name": "update.json",
+      "Bytes": 845,
+      "Digest": "sha256:d9b845c5f0cc81c80f8c0d4abd6c058184b6d8e2390e55b562a71e0548cdb16a",
+      "URL": "https://github.com/Hacket2130/helmet-voice-tfar/releases/download/r12/update.json",
+      "Verified": true
+    }
+  ],
+  "InstallerBackendAssertions": 137,
+  "OnlineInstallerCheck": "UNVERIFIED: local tool dispatch stalled; no returned execution result",
+  "LiveArmaOrTeamSpeakModified": false,
+  "LiveMultiplayerAccepted": false,
+  "GuiAccepted": false
+}
