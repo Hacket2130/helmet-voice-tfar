@@ -10,8 +10,8 @@ The installer contains this unchanged R11 package. Its public name is Task force
 
 1. Build and validate the mod/plugin together: completed, 115 native and 15 package checks.
 2. Build the offline installer with guarded GitHub update downloads and immutable version directories: completed, 130 backend assertions.
-3. Verify branded artifacts and publish source, license and build instructions: asset audit passed; source publication in progress.
-4. Publish r11 with installer, native TS package, mod ZIP, source ZIP, checksums and update.json; verify the live feed and downloaded hashes.
+3. Verify branded artifacts and publish source, license and build instructions: completed at source commit 77d5c376b123ab5922ec3cf33a93543423c709a7.
+4. Publish r11 with installer, native TS package, mod ZIP, source ZIP, checksums and update.json: completed. All six remote asset hashes/sizes and the latest/tag endpoints verified. Actual installer-backend feed/download/install/readback passed in an isolated test folder.
 5. Complete manual GUI, multiplayer, CBA/ACE, performance and Death Trooper intelligibility acceptance separately. Do not infer these from build/backend checks.
 
 ## Future releases

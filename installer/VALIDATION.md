@@ -24,7 +24,11 @@ Date: 2026-11-05. Branding build: installer 1.0.1.0, bundled addon R11, plugin 1
 
 This revision changes setup/public naming. It does not rebuild the embedded TFAR plugin, alter DSP, modify CBA/ACE behavior, install into live Arma/TeamSpeak paths or change the repository/feed identity. The plugin retains its historical Helmet Voice R11 display name; README documents this compatibility boundary.
 
-The repository exists at Hacket2130/helmet-voice-tfar, but the GitHub release and update feed have not been published. No successful live update check/download is claimed. `Check-PublishedRelease.ps1` is ready to verify the real feed and install into a workspace-only test root after publication.
+R11 was published at https://github.com/Hacket2130/helmet-voice-tfar/releases/tag/r11 on 2026-11-05 at 17:58:54 UTC. Release ID 435539017 is the latest normal release; tag r11 points to source commit `77d5c376b123ab5922ec3cf33a93543423c709a7`. Six uploaded asset sizes and GitHub SHA256 digests exactly match the local release records.
+
+At 18:00:53 UTC, a compiled checker loaded the actual shipped EXE and called its `GetLatest`, `InstallOnline` and `ReadState` methods. The public latest-release feed matched bundled revision 11, package URL, 54021360-byte size and SHA256. The HTTPS download, archive validation, workspace-only installation and verified readback all passed. No live TeamSpeak/Arma installation changed. Windows PowerShell initially refused the script because scripts are disabled; no execution policy was changed. The compiled `PublishedReleaseCheck.cs` provides the equivalent verification path.
+
+Release archives remain immutable prepublication snapshots. This repository document records the later online verification evidence.
 
 The earlier desktop visual check found DPI clipping, and the UI source was corrected to use content-sized wrapping layouts. The user stopped computer use with Escape before final desktop verification. The branding pass did not resume computer use; final appearance and interactive GUI behavior remain unverified. No TeamSpeak installer or launcher automation was run.
 

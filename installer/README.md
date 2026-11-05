@@ -16,7 +16,7 @@ The name applies to the setup app, Windows executable metadata, public downloads
 
 ## Update behavior
 
-As of this local branding delivery, the GitHub release and update feed have not been published. Offline installation works; online checks will report failure until publication is completed. Final interactive GUI verification also remains pending.
+R11 is published at [GitHub Releases](https://github.com/Hacket2130/helmet-voice-tfar/releases/tag/r11). On 2026-11-05, the shipped installer's backend successfully read the public latest-release feed, downloaded the exact package, installed it into an isolated test folder and verified readback. All six GitHub asset sizes and SHA256 digests matched local files. Final interactive GUI and in-game verification remain separate.
 
 The app reads `https://github.com/Hacket2130/helmet-voice-tfar/releases/latest/download/update.json`. It compares integer `releaseNumber` values, checks package size and SHA256, validates archive paths and packaged file hashes, then promotes a staged release into `Releases\R<number>`. Existing releases are preserved; an older installer never downgrades the selected release. Failed checks report an unknown update status instead of claiming the installation is current.
 
@@ -41,6 +41,15 @@ For a read-only GUI inspection:
 ```
 
 Preview mode disables installation, networking, external launching and preference writes. Tests never call TeamSpeak's package installer or edit launcher presets. Arma/TeamSpeak multiplayer behavior is outside installer test coverage.
+
+For postpublication verification, `Check-PublishedRelease.ps1` uses Windows PowerShell 5.1 and the shipped EXE. If local execution policy disables script files, use the compiled checker without changing that policy:
+
+```powershell
+& "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /langversion:5 /warnaserror+ /r:System.Web.Extensions.dll /out:work\PublishedReleaseCheck.exe installer\PublishedReleaseCheck.cs
+& ./work/PublishedReleaseCheck.exe (Get-Location).Path
+```
+
+The checker compares the public feed with the bundled manifest, calls the actual EXE's download/install/readback methods, and writes its report under `work/vanguard-installer-build`. Run from a prepared project root with the branded setup in its standard output folder. It does not launch the GUI or install into live TeamSpeak/Arma directories.
 
 ## Future releases
 
